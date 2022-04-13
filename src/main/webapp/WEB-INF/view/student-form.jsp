@@ -24,6 +24,15 @@
         Last name (*): <form:input path="lastname"/>
         <form:errors path="lastname" cssClass="error"/>
         <br/>
+        <br/>
+        Free passes: <form:input path="freePasses"/>
+        <form:errors cssClass="error" path="freePasses"/>
+        <br/>
+        <br/>
+        Postal Code: <form:input path="postalCode"/>
+        <form:errors path="postalCode" cssClass="error"/>
+        <br/>
+        <br/>
         Country:
         <form:select path="country">
 <%--            <form:option value="Brazil" label="Brazil"/>--%>

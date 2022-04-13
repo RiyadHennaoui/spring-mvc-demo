@@ -1,7 +1,6 @@
 package com.example.springmvcdemo.mvc.model;
 
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
@@ -16,6 +15,12 @@ public class Student {
     private LinkedHashMap<String, String> favoriteLanguageOptions;
     private String favoriteLanguage;
     private ArrayList<String> operatingSystems;
+    @NotNull(message = "is required")
+    @Min(value = 0, message = "must be greater than or equals to zero")
+    @Max(value = 10, message = "must be less than or equals to 10")
+    private Integer freePasses;
+    @Pattern(regexp = "^[a-zA-Z0-9]{5}", message = "only 5 chars/digits")
+    private String postalCode;
 
     public Student() {
         countryOptions = new LinkedHashMap<>();
@@ -33,6 +38,22 @@ public class Student {
         favoriteLanguageOptions.put("C#", "C#");
         favoriteLanguageOptions.put("PHP", "PHP");
         favoriteLanguageOptions.put("Ruby", "Ruby");
+    }
+
+    public String getPostalCode() {
+        return postalCode;
+    }
+
+    public void setPostalCode(String postalCode) {
+        this.postalCode = postalCode;
+    }
+
+    public Integer getFreePasses() {
+        return freePasses;
+    }
+
+    public void setFreePasses(Integer freePasses) {
+        this.freePasses = freePasses;
     }
 
     public ArrayList<String> getOperatingSystems() {

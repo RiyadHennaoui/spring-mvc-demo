@@ -32,5 +32,12 @@ OS :
     </c:forEach>
 </ul>
 
+<br>
+<br>
+Free passes: ${student.freePasses}
+<br>
+<br>
+Postal code: ${student.postalCode}
+
 </body>
 </html>
