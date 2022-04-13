@@ -11,6 +11,9 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        .error {color:red}
+    </style>
 </head>
 <body>
 
@@ -18,7 +21,8 @@
 
         First name: <form:input path="firstname"/>
         <br/>
-        Last name: <form:input path="lastname"/>
+        Last name (*): <form:input path="lastname"/>
+        <form:errors path="lastname" cssClass="error"/>
         <br/>
         Country:
         <form:select path="country">

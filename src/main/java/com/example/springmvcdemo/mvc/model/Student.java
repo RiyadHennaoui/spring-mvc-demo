@@ -1,11 +1,15 @@
 package com.example.springmvcdemo.mvc.model;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 
 public class Student {
 
     private String firstname;
+    @NotNull(message = "is required")
+    @Size(min = 1, message = "is required")
     private String lastname;
     private String country;
     private LinkedHashMap<String, String> countryOptions;
