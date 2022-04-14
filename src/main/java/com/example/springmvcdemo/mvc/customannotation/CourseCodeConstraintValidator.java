@@ -1,0 +1,31 @@
+package com.example.springmvcdemo.mvc.customannotation;
+
+import javax.validation.ConstraintValidator;
+import javax.validation.ConstraintValidatorContext;
+
+public class CourseCodeConstraintValidator implements ConstraintValidator<CourseCode, String> {
+
+   private String coursePrefix;
+
+    @Override
+    public void initialize(CourseCode theCourseCode) {
+        coursePrefix = theCourseCode.value();
+    }
+
+    @Override
+    public boolean isValid(String value, ConstraintValidatorContext context) {
+
+        boolean result;
+
+//        result = value == null || value.startsWith(coursePrefix);
+
+        if (value != null){
+            result = value.startsWith(coursePrefix);
+
+        }else {
+            result = true;
+        }
+
+        return result;
+    }
+}
